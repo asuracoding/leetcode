@@ -1,15 +1,13 @@
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
         combi_str = ''
-        left, right = 0, 0
-        while left < len(word1) or right < len(word2):
-            
-            if left < len(word1):
-                combi_str += word1[left]
-                left+=1
+        len_1 = len(word1)
+        len_2 = len(word2)
 
-            if right < len(word2):
-                combi_str += word2[right]
-                right+=1
-            print(combi_str)
+        for x in range(max(len_1,len_2)):
+            if x < len_1:
+                combi_str +=word1[x]
+            if x < len_2:
+                combi_str +=word2[x]
+
         return combi_str
