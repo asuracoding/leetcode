@@ -10,5 +10,5 @@ class Solution:
             
             if s[x + k] in vowels:
                 current_vowels +=1
-                max_vowels = max(current_vowels, max_vowels)
+            max_vowels = max(current_vowels, max_vowels)
         return max_vowels
