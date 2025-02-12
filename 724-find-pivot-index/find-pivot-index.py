@@ -1,18 +1,11 @@
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
-        left = 0
-        right = 1
-        total = sum(nums)
-        for x in range(len(nums)):
-            if left == total - left - nums[x]:
-                return  x
-            left +=nums[x]
-        return -1
-        # while left <= len(nums)-1:
-        #     prefix = sum(nums[:left])
-        #     suffix = sum(nums[right:])
-        #     if prefix == suffix:
-        #         return right-1
-        #     left+=1
-        #     right+=1
+        pivot = prefix = suffix = 0
+        while pivot <len(nums):
+            prefix = sum(nums[:pivot])
+            suffix = sum(nums[pivot+1:])
+            print(f"prefix is {prefix} suffix is {suffix}")
+            if  prefix == suffix:
+                return pivot
+            pivot +=1
         return -1
